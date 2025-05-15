@@ -1,101 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 60 100% 99%;
+    --foreground: 280 10% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 60 100% 99%;
+    --card-foreground: 280 10% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 60 100% 99%;
+    --popover-foreground: 280 10% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 336 100% 71%;
+    --primary-foreground: 60 100% 99%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 157 100% 80%;
+    --secondary-foreground: 280 10% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 280 30% 96%;
+    --muted-foreground: 280 10% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 260 100% 86%;
+    --accent-foreground: 280 10% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 60 100% 99%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 280 30% 93%;
+    --input: 280 30% 93%;
+    --ring: 336 100% 71%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 60 100% 99%;
+    --sidebar-foreground: 280 10% 20%;
+    --sidebar-primary: 336 100% 71%;
+    --sidebar-primary-foreground: 60 100% 99%;
+    --sidebar-accent: 280 30% 96%;
+    --sidebar-accent-foreground: 280 10% 20%;
+    --sidebar-border: 280 30% 93%;
+    --sidebar-ring: 336 100% 71%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-bubbly;
+    background-image: 
+      radial-gradient(circle at 100% 0%, rgba(255, 107, 153, 0.08) 0%, rgba(255, 107, 153, 0) 20%), 
+      radial-gradient(circle at 0% 70%, rgba(157, 255, 176, 0.08) 0%, rgba(157, 255, 176, 0) 20%),
+      radial-gradient(circle at 50% 100%, rgba(202, 182, 255, 0.08) 0%, rgba(202, 182, 255, 0) 20%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .sticker {
+    @apply relative inline-block rounded-2xl px-3 py-1 font-medium text-sm rotate-[-2deg] transform shadow-md transition-all duration-300;
+  }
+
+  .sticker-pink {
+    @apply bg-bubblegum text-white;
+  }
+
+  .sticker-mint {
+    @apply bg-mint text-foreground;
+  }
+
+  .sticker-lavender {
+    @apply bg-lavender text-foreground;
+  }
+
+  .sticker-tangerine {
+    @apply bg-tangerine text-foreground;
+  }
+
+  .sticker-yellow {
+    @apply bg-lemonade text-foreground;
+  }
+
+  .sticker-blue {
+    @apply bg-blueberry text-foreground;
+  }
+
+  .sticker:hover {
+    @apply animate-jiggle;
+  }
+
+  .polaroid {
+    @apply bg-white p-2 shadow-lg rounded-sm rotate-[-1deg] transform transition-all;
+  }
+
+  .polaroid:hover {
+    @apply rotate-[1deg] scale-[1.01];
+  }
+
+  .polaroid-img {
+    @apply mb-4;
+  }
+
+  .polaroid-caption {
+    @apply text-center text-sm font-medium pb-2;
+  }
+
+  .button-fun {
+    @apply px-6 py-3 rounded-full font-medium shadow-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95;
+  }
+
+  .button-primary {
+    @apply bg-bubblegum text-white hover:bg-opacity-90;
+  }
+
+  .button-secondary {
+    @apply bg-lavender text-foreground hover:bg-opacity-90;
+  }
+
+  .button-outline {
+    @apply border-2 border-bubblegum text-bubblegum hover:bg-bubblegum hover:text-white;
+  }
+
+  .cafe-section {
+    @apply py-16 px-4 md:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-6 font-fun;
+  }
+
+  .cafe-card {
+    @apply bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all;
+  }
+
+  .tape {
+    @apply before:content-[''] before:absolute before:w-12 before:h-4 before:bg-[#FFEB3B]/40 before:top-[-10px] before:left-1/2 before:-translate-x-1/2 before:rotate-[-2deg] before:z-10;
   }
 }
